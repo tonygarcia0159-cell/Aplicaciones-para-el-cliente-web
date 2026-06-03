@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tareas>
+ <tarea codigo="1780503319613">
+ <titulo>Tarea1</titulo>
+ <descripcion>Adelanto tarea 1</descripcion>
+ <fecha>3/6/2026</fecha>
+ </tarea>
+ <tarea codigo="1780503329125">
+ <titulo>Tarea 2</titulo>
+ <descripcion>Avances tarea 2</descripcion>
+ <fecha>3/6/2026</fecha>
+ </tarea>
+ <tarea codigo="1780503350327">
+ <titulo>Tarea 3 </titulo>
+ <descripcion>Avance tarea 3</descripcion>
+ <fecha>3/6/2026</fecha>
+ </tarea>
+</tareas>
