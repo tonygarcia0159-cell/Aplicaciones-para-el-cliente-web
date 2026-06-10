@@ -1,0 +1,244 @@
+:root {
+  --fondo-pagina:   #c5cfc5;
+  --verde-primario: #587558;
+  --verde-hover:    #476247;
+  --card-bg:        #eef2ee;
+  --input-bg:       #d0dbd0;
+  --input-focus-bg: #bfcbbf;
+  --texto-oscuro:   #2a342a;
+  --texto-label:    #4a5a4a;
+  --rojo-error:     #c0392b;
+  --blanco:         #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--fondo-pagina);
+  color: var(--texto-oscuro);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  margin: 0;
+  padding: 40px 15px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Header ──────────────────────────────────────────── */
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin: 0 0 6px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--verde-primario);
+}
+
+header p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--texto-label);
+}
+
+/* ── Layout Principal ─────────────────────────────────── */
+.main-content {
+  width: 100%;
+  max-width: 850px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* ── Tarjeta ──────────────────────────────────────────── */
+.box {
+  background-color: var(--card-bg);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+  overflow: hidden;
+}
+
+.box h2 {
+  background-color: var(--verde-primario);
+  color: var(--blanco);
+  margin: 0;
+  padding: 20px;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* ── Formulario ───────────────────────────────────────── */
+form {
+  padding: 30px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.row,
+.row-triple {
+  display: flex;
+  gap: 20px;
+}
+
+@media (max-width: 650px) {
+  .row,
+  .row-triple {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.row .field,
+.row-triple .field {
+  flex: 1;
+}
+
+label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--texto-label);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ── Inputs ───────────────────────────────────────────── */
+input,
+select {
+  background-color: var(--input-bg);
+  color: var(--texto-oscuro);
+  border: none;
+  padding: 13px 18px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  border-radius: 50px;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+
+/* Flecha personalizada en select manteniendo la pill */
+select {
+  -webkit-appearance: none;
+  appearance: none;
+  padding-right: 40px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%234a5a4a' d='M0 0l6 8 6-8z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  background-color: var(--input-focus-bg);
+  box-shadow: 0 0 0 3px rgba(88, 117, 88, 0.25);
+}
+
+input::placeholder {
+  color: #7a8e7a;
+}
+
+input.input-error,
+select.input-error {
+  background-color: #f5d0cc;
+  box-shadow: 0 0 0 2px var(--rojo-error);
+}
+
+.error {
+  color: var(--rojo-error);
+  font-size: 0.8rem;
+  margin-top: 4px;
+  min-height: 16px;
+  font-weight: 500;
+  padding-left: 14px;
+}
+
+/* ── Botón ────────────────────────────────────────────── */
+button {
+  background-color: var(--verde-primario);
+  color: var(--blanco);
+  border: none;
+  padding: 15px 20px;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 1.05rem;
+  border-radius: 50px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  transition: background-color 0.2s, transform 0.1s;
+  letter-spacing: 0.5px;
+}
+
+button:hover {
+  background-color: var(--verde-hover);
+}
+
+button:active {
+  transform: scale(0.99);
+}
+
+/* ── Sección Tabla ────────────────────────────────────── */
+.table-box {
+  padding: 25px;
+}
+
+.table-box h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+  color: var(--verde-primario);
+  border-bottom: 2px solid #c8d4c8;
+  padding-bottom: 8px;
+}
+
+.scroll-table {
+  overflow-x: auto;
+  border: 1px solid #c4d0c4;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  background-color: var(--card-bg);
+}
+
+th,
+td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #d4dfd4;
+}
+
+th {
+  background-color: #dce6dc;
+  color: var(--verde-primario);
+  font-weight: 700;
+  border-bottom: 2px solid #c4d0c4;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+
+tr:hover {
+  background-color: #e4ebe4;
+}
+
+table td b {
+  color: var(--verde-primario);
+  font-weight: 600;
+}

@@ -1,26 +1,106 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Taller: Gestor de Tareas Semiestructurado</title>
-<link rel="stylesheet" href="estilos.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRE - Sistema de Registro de Estudiantes</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="contenedor">
-<h1>Gestor de Tareas</h1>
-<form id="formulario-tareas">
-<input type="text" id="titulo-tarea" placeholder="Título de la tarea" required>
-<textarea id="descripcion-tarea" placeholder="Descripción de la tarea" required></textarea>
-<button type="submit">Agregar Tarea</button>
-</form>
-<div class="acciones-datos">
-<button id="btn-exportar-json" class="btn-secundario">Exportar a JSON</button>
-<button id="btn-exportar-xml" class="btn-secundario">Exportar a XML</button>
-</div>
-<h2>Mis Tareas Activas</h2>
-<ul id="lista-tareas"></ul>
-</div>
-<script src="aplicacion.js"></script>
+
+    <header>
+        <h1>SRE</h1>
+        <p>Sistema de Registro de Estudiantes</p>
+    </header>
+
+    <main class="main-content">
+        <section class="box">
+            <h2>Nuevo Registro</h2>
+            <form id="studentForm">
+                <div class="field">
+                    <label>Número de Cédula:</label>
+                    <input type="text" id="cedula" placeholder="e.g. 17567812-4">
+                    <span class="error" id="err-cedula"></span>
+                </div>
+
+                <div class="row">
+                    <div class="field">
+                        <label>Apellidos:</label>
+                        <input type="text" id="apellidos" placeholder="Pérez Castro">
+                        <span class="error" id="err-apellidos"></span>
+                    </div>
+                    <div class="field">
+                        <label>Nombres:</label>
+                        <input type="text" id="nombres" placeholder="Juan Carlos">
+                        <span class="error" id="err-nombres"></span>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>Dirección Domiciliaria:</label>
+                    <input type="text" id="direccion" placeholder="e.g. 123 Calle Falsa">
+                    <span class="error" id="err-direccion"></span>
+                </div>
+
+                <div class="row">
+                    <div class="field">
+                        <label>Teléfono:</label>
+                        <input type="text" id="telefono" placeholder="e.g. +593-987-654-321">
+                        <span class="error" id="err-telefono"></span>
+                    </div>
+                    <div class="field">
+                        <label>Correo Electrónico:</label>
+                        <input type="email" id="email" placeholder="juan.perez@example.com">
+                        <span class="error" id="err-email"></span>
+                    </div>
+                </div>
+
+                <div class="row-triple">
+                    <div class="field">
+                        <label>Facultad:</label>
+                        <select id="facultad">
+                            <option value="">-- Elegir Facultad --</option>
+                            <option value="Ingeniería">Ingeniería</option>
+                            <option value="Medicina">Medicina</option>
+                            <option value="Administración">Administración</option>
+                        </select>
+                        <span class="error" id="err-facultad"></span>
+                    </div>
+                    <div class="field">
+                        <label>Nivel:</label>
+                        <input type="number" id="nivel" min="1" max="10" placeholder="Nivel">
+                        <span class="error" id="err-nivel"></span>
+                    </div>
+                    <div class="field">
+                        <label>Paralelo:</label>
+                        <input type="text" id="paralelo" placeholder="e.g. Paralelo A">
+                        <span class="error" id="err-paralelo"></span>
+                    </div>
+                </div>
+
+                <button type="submit" id="btnGuardar">Guardar registro </button>
+            </form>
+        </section>
+
+        <section class="box table-box">
+            <h3>Tabla de estudiantes registrados</h3>
+            <div class="scroll-table">
+                <table id="tablaEstudiantes">
+                    <thead>
+                        <tr>
+                            <th>Cédula</th>
+                            <th>Estudiante</th>
+                            <th>Contacto</th>
+                            <th>Facultad/Curso</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
